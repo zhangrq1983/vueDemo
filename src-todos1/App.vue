@@ -1,8 +1,7 @@
 <template>
   <div class="todo-container">
     <div class="todo-wrap">
-<!--      <TodoHeader @addTodo="addTodo"/>-->
-      <TodoHeader ref="header"/>
+      <TodoHeader :addTodo="addTodo"/>
       <TodoList :todos="todos" :deleteTodo="deleteTodo"/>
       <todo-footer :todos="todos" :deleteCompleteTodos="deleteCompleteTodos" :selectAllTodos="selectAllTodos"/>
     </div>
@@ -24,10 +23,6 @@ export default {
       // ]
       todos: JSON.parse(window.localStorage.getItem('todos_key') || '[]')
     }
-  },
-  mounted () {
-    // this.$on('addTodo', this.addTodo)
-    this.$refs.header.$on('addTodo', this.addTodo)
   },
   methods: {
     addTodo (todo) {
