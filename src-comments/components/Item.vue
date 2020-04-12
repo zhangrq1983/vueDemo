@@ -18,7 +18,7 @@
     methods:{
       deleteItem(){
         const {comment,index,deleteComment} = this
-        if(window.confirm('确定删除${comment.name}的评论吗?')){
+        if(window.confirm(`确定删除${comment.name}的评论吗?`)){
           deleteComment(index)
         }
       }

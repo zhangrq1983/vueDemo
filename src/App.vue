@@ -1,22 +1,40 @@
 <template>
   <div class="todo-container">
     <div class="todo-wrap">
-      <TodoHeader/>
-      <TodoList/>
+      <TodoHeader :addTodo="addTodo"/>
+      <TodoList :todos="todos" :deleteTodo="deleteTodo"/>
       <todo-footer/>
     </div>
   </div>
 </template>
 
 <script>
-  import TodoHeader from './components/TodoHeader'
-  import TodoList from './components/TodoList'
-  import TodoFooter from './components/TodoFooter'
-  export default {
-    components:{
-      TodoHeader,TodoList,TodoFooter
+import TodoHeader from './components/TodoHeader'
+import TodoList from './components/TodoList'
+import TodoFooter from './components/TodoFooter'
+
+export default {
+  data () {
+    return {
+      todos: [
+        {title: '吃饭', complete: false},
+        {title: '睡觉', complete: true},
+        {title: 'coding', complete: false}
+      ]
     }
+  },
+  methods: {
+    addTodo (todo) {
+      this.todos.unshift(todo)
+    },
+    deleteTodo (index) {
+      this.todos.splice(index, 1)
+    }
+  },
+  components: {
+    TodoHeader, TodoList, TodoFooter
   }
+}
 </script>
 
 <style>

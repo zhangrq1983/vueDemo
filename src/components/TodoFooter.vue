@@ -11,9 +11,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'TodoHeader'
-  }
+export default {
+  name: 'TodoHeader'
+}
 </script>
 
 <style>
