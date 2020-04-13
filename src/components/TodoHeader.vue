@@ -26,7 +26,7 @@ export default {
         title, complete: false
       }
       // this.addTodo(todo)
-      this.$emit('addTodo',todo)
+      this.$emit('addTodo', todo)
       this.title = ''
     }
   }
